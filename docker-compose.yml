@@ -1,27 +1,30 @@
 version: "3.9"
 services:
     server:
+      container_name: server
       build:
         context: .
         dockerfile: Dockerfile
-      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/server
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry
       env_file:
         - .env
       ports:
         - "3000:3000"
 
     grocerywebsite:
+      container_name: grocerywebsite
       build:
         context: grocerywebsite
         dockerfile: Dockerfile
-      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/grocerywebsite
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry
       ports:
         - "80:80"
 
     cronjob:
+      container_name: cronjob
       build:
         context: .
         dockerfile: ./cronjob/Dockerfile
-      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/cronjob
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry
       env_file:
         - .env
