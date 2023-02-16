@@ -1,0 +1,78 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+
+  ],
+  "containerDefinitions": [
+    {
+      "name": "server",
+      "hostname": "server",
+      "essential": true,
+      "environment": [
+        {
+          "name": "AWS_RDS_PATH",
+          "value": "grocerydb2.cefbww7xlh1g.us-west-2.rds.amazonaws.com"
+        },
+        {
+          "name": "AWS_RDS_PORT",
+          "value": "8886"
+        },
+        {
+          "name": "AWS_RDS_PASSWORD",
+          "value": "chocolatefrogrds"
+        },
+        {
+          "name": "AWS_RDS_DATABASE_NAME",
+          "value": "grocerydb"
+        }
+      ],
+      "memory": 300,
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000
+        }
+      ]
+    },
+    {
+      "name": "grocerywebsite",
+      "hostname": "grocerywebsite",
+      "essential": true,
+      "environment": [
+
+      ],
+      "memory": 100,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ]
+    },
+    {
+      "name": "cronjob",
+      "hostname": "cronjob",
+      "essential": true,
+      "memory": 500,
+      "environment": [
+        {
+          "name": "AWS_RDS_PATH",
+          "value": "grocerydb2.cefbww7xlh1g.us-west-2.rds.amazonaws.com"
+        },
+        {
+          "name": "AWS_RDS_PORT",
+          "value": "8886"
+        },
+        {
+          "name": "AWS_RDS_PASSWORD",
+          "value": "chocolatefrogrds"
+        },
+        {
+          "name": "AWS_RDS_DATABASE_NAME",
+          "value": "grocerydb"
+        }
+      ],
+      "portMappings": []
+    }
+  ]
+}
