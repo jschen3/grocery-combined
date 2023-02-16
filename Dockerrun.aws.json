@@ -6,6 +6,7 @@
   "containerDefinitions": [
     {
       "name": "server",
+      "image":"940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/server"
       "hostname": "server",
       "essential": true,
       "environment": [
@@ -37,6 +38,7 @@
     {
       "name": "grocerywebsite",
       "hostname": "grocerywebsite",
+      "image": "940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/grocerywebsite",
       "essential": true,
       "environment": [
 
@@ -52,6 +54,7 @@
     {
       "name": "cronjob",
       "hostname": "cronjob",
+      "image": "940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/cronjob",
       "essential": true,
       "memory": 500,
       "environment": [

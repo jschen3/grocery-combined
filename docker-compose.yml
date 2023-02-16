@@ -4,6 +4,7 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/server
       env_file:
         - .env
       ports:
@@ -13,6 +14,7 @@ services:
       build:
         context: grocerywebsite
         dockerfile: Dockerfile
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/grocerywebsite
       ports:
         - "80:80"
 
@@ -20,5 +22,6 @@ services:
       build:
         context: .
         dockerfile: ./cronjob/Dockerfile
+      image: 940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/cronjob
       env_file:
         - .env
