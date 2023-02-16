@@ -6,7 +6,7 @@
   "containerDefinitions": [
     {
       "name": "server",
-      "image":"940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/server"
+      "image":"940234352785.dkr.ecr.us-west-2.amazonaws.com/groceryregistry/server",
       "hostname": "server",
       "essential": true,
       "environment": [
